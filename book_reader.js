@@ -1,17 +1,24 @@
 function BookReader(book) {
   this.book = book;
+  this.currentPage = 0;
 }
 
 BookReader.prototype.nextPage = function() {
-  // your code here
+  if (this.book.length -1 > this.currentPage) {
+    this.currentPage++;
+  }
+  return this.book[this.currentPage];
 };
 
 BookReader.prototype.previousPage = function() {
-  // your code here
+  if (this.currentPage > 0) {
+    this.currentPage--;
+  }
+  return this.book[this.currentPage];
 };
 
 BookReader.prototype.pagesLeft = function() {
-  // your code here
+  return (this.book.length -1)  - this.currentPage;
 };
 
 BookReader.prototype.encouragement = function() {
