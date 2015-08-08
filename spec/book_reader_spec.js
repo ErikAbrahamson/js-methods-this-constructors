@@ -71,6 +71,7 @@ describe('#encouragement', function() {
   it('returns an extra special String of encouragement for the reader when they are on the last page', function() {
     var reader = new BookReader(shortExampleBook);
     reader.nextPage();
+    reader.nextPage();
 
     expect(reader.encouragement()).toEqual("Keep going, this book is good 'til the last drop!");
   });

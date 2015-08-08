@@ -18,11 +18,15 @@ BookReader.prototype.previousPage = function() {
 };
 
 BookReader.prototype.pagesLeft = function() {
-  return (this.book.length -1)  - this.currentPage;
+  return this.book.length - this.currentPage - 1;
 };
 
 BookReader.prototype.encouragement = function() {
-  // your code here
+  if (this.book.length -1 === this.currentPage) {
+    return 'Keep going, this book is good \'til the last drop!';
+  } else {
+    return 'Keep going, only ' + this.pagesLeft() + ' pages left after this one!';
+  }
 };
 
 // DO NOT MODIFY BELOW THIS COMMENT
