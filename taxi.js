@@ -1,12 +1,29 @@
 function Taxi(driverName, maxNumberOfPassengers) {
-  // your code here
+  this.driverName = driverName;
+  this.maxNumberOfPassengers = maxNumberOfPassengers;
+  this.passengers = [];
 }
 
-Taxi.prototype.addPassenger = function(passengerName) {
-  // your code here
+Taxi.prototype.addPassenger = function(
+  passengerName) {
+  this.passengerName = passengerName;
+  this.passengers.push(passengerName);
 };
 
-// your code here
+Taxi.prototype.passengerCount = function() {
+  return this.passengers.length;
+};
 
-// DO NOT MODIFY BELOW THIS COMMENT:
+Taxi.prototype.full = function() {
+  if (this.passengers.length - 1 > this.maxNumberOfPassengers) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+
+
+
+
 module.exports = Taxi;
